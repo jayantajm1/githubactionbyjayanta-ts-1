@@ -7,12 +7,12 @@ env:
   cloud: google-cloud #workflow var
 
 jobs:
-  configuration_greeting_job:
+  configuration_greeting_job: #jobs name
     runs-on: ubuntu-latest #runner
     env:
       Greeting: Hello #job var
     steps:
-      - name: "Say Hello to Jayanta"
+      - name: "Say Hello to Jayanta" #steps name
         run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }}!"
         env:
           First_Name: Jayanta #step vat
