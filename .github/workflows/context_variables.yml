@@ -1,0 +1,18 @@
+name: Testing Context Variables
+
+on:
+  workflow_dispatch #for manual run
+
+env:
+  cloud: google-cloud #workflow var
+
+jobs:
+  test_context_variables: #job title
+    runs-on: ubuntu-latest #runner 
+    steps:
+      - name: "Checking Context Variable" #steps title below is for meta data from gh
+        run: |
+          echo "Repository Name : ${{ github.repository }}" 
+          echo "Workflow Name : ${{ github.workflow }}"
+          echo "Triggered by : ${{ github.triggering_actor }}"
+          
